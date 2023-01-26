@@ -6,17 +6,17 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 22:00:22 by jmorneau          #+#    #+#              #
-#    Updated: 2023/01/26 00:42:38 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/01/26 00:27:43 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 CC = @g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = @rm -f
 
 SRC_DIR = ./
-SRC_FILES =	./main.cpp zombieHorde.cpp
+SRC_FILES =	main.cpp
 
 OBJ_DIR = objs/
 OBJS = ${addprefix ${OBJ_DIR}, $(SRC_FILES:.cpp=.o)}
