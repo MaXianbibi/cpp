@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   humanA.cpp                                         :+:      :+:    :+:   */
+/*   class.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 01:55:00 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 04:01:32 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/01/26 01:51:36 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/01/26 02:35:38 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "class.hpp"
+#ifndef CLASS_H
+# define CLASS_H
 
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon_(weapon)
-{
-    this->name = name;
-}
+# include "./weapon.hpp"
+# include "./HumanA.hpp"
+# include "./HumanB.hpp"
 
-HumanA::~HumanA()
-{
-}
+#endif

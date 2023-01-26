@@ -6,15 +6,19 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 00:43:53 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 01:20:10 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/01/26 04:07:07 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "weapon.hpp"
+#include "class.hpp"
 
-int main (void) 
+int main(void)
 {
-	HumanA bob;
-	Weapon sfd;
+	Weapon club = Weapon("crude spiked club");
 	
+	HumanB jim("Jim");
+	jim.setWeapon(club);
+	jim.attack();
+	club.setType("some other type of club");
+	jim.attack();
 }

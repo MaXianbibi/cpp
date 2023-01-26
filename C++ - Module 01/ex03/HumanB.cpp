@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   humanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 01:55:00 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 04:01:32 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/01/26 04:11:36 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "class.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon_(weapon)
+HumanB::HumanB(std::string name, Weapon) : weapon(weapon)
 {
-    this->name = name;
+	this->name = name;
 }
 
-HumanA::~HumanA()
+HumanB::HumanB(std::string name) : weapon(tmp) {
+	this->name = name;
+}
+
+HumanB::~HumanB()
 {
 }

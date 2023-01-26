@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 00:44:32 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 01:29:11 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/01/26 03:11:43 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@
 #include <cstdio>
 #include <iomanip>
 
-#include "humanA.hpp"
+# include "class.hpp"
 
+// #include "HumanA.hpp" WTF CHECK THIS OUT
 
 class Weapon
 {
 public:
+	int test;
 	Weapon();
+	Weapon(std::string name);
 	~Weapon();
 
 	const std::string &getType() const
@@ -36,7 +39,7 @@ public:
 
 	void setType(std::string str)
 	{
-		type = str;
+		this->type = str;
 	}
 
 private:

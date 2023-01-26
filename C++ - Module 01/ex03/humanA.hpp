@@ -5,10 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 01:39:53 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 01:40:54 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/01/26 01:47:59 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/01/26 04:12:30 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "weapon.hpp"
+#ifndef HUMANA_H
+# define HUMANA_H
 
+# include "class.hpp"
+
+cl
+
+# endif
