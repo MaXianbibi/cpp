@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   class.hpp                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 01:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 02:35:38 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/01/28 11:56:03 by justinmorne       #+#    #+#             */
+/*   Updated: 2023/01/28 11:57:11 by justinmorne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_H
-# define CLASS_H
+#include <fstream>
+#include <iostream>
 
-# include "./weapon.hpp"
-# include "./humanA.hpp"
-# include "./HumanB.hpp"
+int main(int argc, char ** argv) 
+{
+    char c;
+    std
 
-#endif
+}

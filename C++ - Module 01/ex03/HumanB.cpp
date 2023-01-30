@@ -12,15 +12,16 @@
 
 #include "class.hpp"
 
-HumanB::HumanB(std::string name, Weapon) : weapon(weapon)
+HumanB::HumanB(std::string name, Weapon &weapon) : name(name)
 {
-	this->name = name;
+    weaponType = &weapon;
 }
 
-HumanB::HumanB(std::string name) : weapon(tmp) {
-	this->name = name;
+HumanB::HumanB(std::string name) : name(name) {
+	weaponType = NULL;
 }
 
 HumanB::~HumanB()
 {
+
 }

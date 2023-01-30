@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 01:47:59 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 03:56:55 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/01/28 11:30:29 by justinmorne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,22 @@
 
 class HumanB
 {
-public:
-	std::string name;
-	
+public:	
 	HumanB(std::string name, Weapon &weapon);
 	HumanB(std::string name);
 	~HumanB();
 
 	void attack() {
-		std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+		std::cout << name << " attacks with their " << ((weaponType) ? weaponType->getType() : "hands")  << std::endl;
 	}
 
-	void setWeapon(Weapon &tmp) {
-		weapon = tmp;
-	}
-	
+    void setWeapon(Weapon &weapon) {
+        weaponType = &weapon;
+    }
+
 private:
-	Weapon tmp;
-	Weapon &weapon;
+    std::string name;
+    Weapon * weaponType;
 };
 
 # endif
