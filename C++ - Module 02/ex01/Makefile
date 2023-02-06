@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+         #
+#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 22:00:22 by jmorneau          #+#    #+#              #
-#    Updated: 2023/01/31 01:36:50 by justinmorne      ###   ########.fr        #
+#    Updated: 2023/01/26 01:15:37 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
