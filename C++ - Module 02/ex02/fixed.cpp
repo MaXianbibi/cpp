@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 07:55:49 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/05 08:50:34 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:15:04 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ fixed::fixed(const fixed &copy)
 	*this = copy;
 }
 
-fixed::fixed(const int number) : value(number * ft_pow(10, fract))
+fixed::fixed(const int number) : value(number * ft_pow(2, fract))
 {
 	std::cout << "Fixed object created with int constructor" << std::endl; 
 }
 
-fixed::fixed(const float number) : value(number * ft_pow(10, fract))
+fixed::fixed(const float number) : value(number * ft_pow(2, fract))
 {
 	std::cout << "Fixed object created with float constructor" << std::endl; 
 }
@@ -89,5 +89,105 @@ std::ostream	&operator<<(std::ostream &str, fixed const &fixed_nbr)
 {
 	return (str << fixed_nbr.toFloat());
 }
+
+fixed	operator+(fixed const &fixedU, fixed const &fixedD) 
+{
+	fixed result(fixedU.toFloat() + fixedD.toFloat());
+	return (result);	
+}
+
+fixed	operator-(fixed const &fixedU, fixed const &fixedD) 
+{
+	fixed result(fixedU.toFloat() - fixedD.toFloat());
+	return (result);
+}
+
+fixed	operator*(fixed const &fixedU, fixed const &fixedD) 
+{
+	fixed result(fixedU.toFloat() * fixedD.toFloat());
+	return (result);
+}
+
+fixed	operator/(fixed const &fixedU, fixed const &fixedD) 
+{
+	fixed result(fixedU.toFloat() * fixedD.toFloat());
+	return (result);
+}
+
+int	operator==(fixed const &fixedU, fixed const &fixedD) {
+	return(fixedU.toFloat() == fixedD.toFloat());
+}
+
+int	operator!=(fixed const &fixedU, fixed const &fixedD) {
+	return(fixedU.toFloat() != fixedD.toFloat());
+}
+
+int	operator<=(fixed const &fixedU, fixed const &fixedD) {
+	return(fixedU.toFloat() <= fixedD.toFloat());
+}
+
+int	operator>=(fixed const &fixedU, fixed const &fixedD) {
+	return(fixedU.toFloat() >= fixedD.toFloat());
+}
+
+int	operator>(fixed const &fixedU, fixed const &fixedD) {
+	return(fixedU.toFloat() > fixedD.toFloat());
+}
+
+int	operator<(fixed const &fixedU, fixed const &fixedD) {
+	return(fixedU.toFloat() < fixedD.toFloat());
+}
+
+fixed & operator++( fixed & U ) {
+	U.setRawBits(U.getRawBits() + 1);
+	return (U);
+}
+
+fixed &  operator--( fixed & U ) {
+	U.setRawBits(U.getRawBits() - 1);
+	return (U);
+}
+
+fixed operator++(fixed &U, int) {
+	fixed tmp(U);
+	++U;
+	return(tmp);
+}
+
+fixed operator--(fixed &U, int) {
+	fixed tmp(U);
+	--U;
+	return(tmp);
+}
+
+const fixed & fixed::min(fixed const &copy1, fixed const &copy2)
+{
+	if (copy1 < copy2)
+		return copy1;
+	return copy2;
+}
+
+const fixed & fixed::max(fixed const &copy1, fixed const &copy2)
+{
+	if (copy1 > copy2)
+		return copy1;
+	return copy2;
+}
+
+fixed & fixed::min_nconst(fixed  &copy1, fixed  &copy2)
+{
+	if (copy1 < copy2)
+		return copy1;
+	return copy2;
+}
+
+fixed & fixed::max_nconst(fixed  &copy1, fixed  &copy2)
+{
+	if (copy1 > copy2)
+		return copy1;
+	return copy2;
+}
+
+
 
 	
