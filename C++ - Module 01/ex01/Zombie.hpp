@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BraiiiiiiinnnzzzZ.hpp                              :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 01:26:44 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/01/26 00:24:21 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/01/31 02:34:40 by justinmorne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Zombie {
 		Zombie( std::string name) : name(name) {
 		}
 		~Zombie(){
+			std::cout << "deleted" << std::endl;
 		}
 		void announce(void) {
 			std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
