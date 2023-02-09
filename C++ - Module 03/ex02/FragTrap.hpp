@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 07:53:28 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/06 19:21:59 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/02/06 19:29:36 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/02/06 19:39:23 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main(void)
+class FragTrap : public ClapTrap
 {
-	{
-		ScavTrap bob("bob");
+private:
+	std::string Name;
+public:
+	FragTrap( void );
+	FragTrap(std::string name);
+	FragTrap(const FragTrap & copy);
+	~FragTrap();
+	void highFivesGuys(void);
+	FragTrap &operator=( const FragTrap & copy );
+};
 
-		bob.attack("k");
-		bob.beRepaired(10);
-		bob.takeDamage(50);
-		bob.guardGate();
-	}	
 
-	{
-		ClapTrap robot;
 
-		robot.beRepaired(2);
-		robot.attack("Someone");
-		robot.takeDamage(5);
-	}
 
-	return (0);
-}
+
+#endif

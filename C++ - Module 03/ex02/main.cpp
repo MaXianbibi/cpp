@@ -6,33 +6,45 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 07:53:28 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/06 15:54:26 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/02/06 19:35:12 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
 
-	std::cout << "### TESTING CLAPTRAP ###\n"
-			  << std::endl;
+	std::cout << "\n\n\n";
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-		ClapTrap a("A");
-		ClapTrap b("Cody");
+		ScavTrap bob("bob");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
-		a.attack("some other robot");
-		a.takeDamage(10);
-		a.takeDamage(10);
-		a.beRepaired(5);
-		a.attack("some other other robot");
-		b.beRepaired(3);
-		for (int i = 0; i < 12; i++)
-			b.attack("Cody-clone");
-		b.beRepaired(3);
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		bob.attack("k");
+		bob.beRepaired(10);
+		bob.takeDamage(50);
+		bob.guardGate();
 	}
+	
+	std::cout << "\n\n\n";
+	{
+		FragTrap jean("jean");
+
+		jean.attack("k");
+		jean.beRepaired(10);
+		jean.takeDamage(50);
+		jean.highFivesGuys();
+	}	
+
+	std::cout << "\n\n\n";
+	{
+		ClapTrap robot;
+
+		robot.beRepaired(2);
+		robot.attack("Someone");
+		robot.takeDamage(5);
+	}
+
 	return (0);
 }

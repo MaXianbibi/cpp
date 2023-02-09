@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 07:53:28 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/06 19:21:59 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/02/06 15:56:34 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/02/06 19:19:43 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
+#include <iostream>
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main(void)
+class ScavTrap : public ClapTrap
 {
-	{
-		ScavTrap bob("bob");
+	
+public:
+	ScavTrap( void );
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap & copy);
+	~ScavTrap();
+	void guardGate( void );
+	ScavTrap &operator=( const ScavTrap & copy );
+	
+	
 
-		bob.attack("k");
-		bob.beRepaired(10);
-		bob.takeDamage(50);
-		bob.guardGate();
-	}	
 
-	{
-		ClapTrap robot;
+};
 
-		robot.beRepaired(2);
-		robot.attack("Someone");
-		robot.takeDamage(5);
-	}
 
-	return (0);
-}
+
+#endif

@@ -6,17 +6,20 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:43:56 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/06 15:51:03 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/02/06 19:16:52 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(10), AttackDemage(0)
+ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(100), EnergyPoints(50), AttackDemage(20)
 {
 	std::cout << "Hello : " << this->Name << std::endl;
 }
-
+ClapTrap::ClapTrap( void ) : Name("Default"), HitPoints(10), EnergyPoints(10), AttackDemage(0)
+{
+	std::cout << "Default ClapTrap" << std::endl;	
+}
 
 ClapTrap::ClapTrap(const ClapTrap & copy)
 {
