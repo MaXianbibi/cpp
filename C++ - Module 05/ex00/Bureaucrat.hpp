@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:24:09 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/09 15:19:49 by jmorneau         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:38:56 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,14 @@ public:
 	public:
 		const char *what() const throw();
 	};
+	const std::string & getName( void ) const;
+	const int & getGrade( void ) const;
+
+	void increaseGrade( const int n );
+	void decreaseGrade( const int n );
 
 	const std::string name;
-	unsigned short int grade;
+	int grade;
 };
 
 #endif
