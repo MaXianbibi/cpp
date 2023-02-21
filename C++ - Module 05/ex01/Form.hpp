@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 13:24:09 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/19 02:54:23 by justinmorne      ###   ########.fr       */
+/*   Created: 2023/02/19 03:11:26 by justinmorne       #+#    #+#             */
+/*   Updated: 2023/02/19 03:24:09 by justinmorne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
-#include <iostream>
+#include "Bureaucrat.hpp"
 
-class Bureaucrat
+class Form
 {
 private:
-
-	std::string name;
-	int grade;
-
+    const std::string name;
+    const int grade_ex;
+    const int grade_sign;
+    bool sign;
+    
 public:
-	Bureaucrat(const std::string _name, const int _grade);
-	Bureaucrat();
-	Bureaucrat(const Bureaucrat & copy);
-	Bureaucrat &operator=(const Bureaucrat & copy);
-	~Bureaucrat();
-	
-	class Exception : public std::exception
+    Form();
+    ~Form();
+
+    Form(const std::string _name, const int _grade_ex, const int _grade_sign);
+
+    class Exception : public std::exception
 	{
 	public:
 		virtual const char *what() const throw();
@@ -46,13 +46,17 @@ public:
 	public:
 		const char *what() const throw();
 	};
-	
-	const std::string & getName( void ) const;
-	const int & getGrade( void ) const;
 
-	void increaseGrade( const int n );
-	void decreaseGrade( const int n );
+
+	
 };
-	std::ostream & operator<<(std::ostream & os, const Bureaucrat& bureaucrat);
+
+
+// Un name (nom) constant.
+// • Un booléen indiquant si le formulaire est signé (à la construction, il ne l’est pas).
+// • Un grade (échelon) constant requis pour le signer.
+// • Un grade (échelon) constant requis pour l’exécuter
+
+
 
 #endif
