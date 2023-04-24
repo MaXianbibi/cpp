@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:24:09 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/19 02:54:23 by justinmorne      ###   ########.fr       */
+/*   Updated: 2023/02/21 01:53:31 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ public:
 	void increaseGrade( const int n );
 	void decreaseGrade( const int n );
 };
-	std::ostream & operator<<(std::ostream & os, const Bureaucrat& bureaucrat);
 
 #endif
