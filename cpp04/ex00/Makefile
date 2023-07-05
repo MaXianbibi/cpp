@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
+#    By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 22:00:22 by jmorneau          #+#    #+#              #
-#    Updated: 2023/01/26 01:15:37 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/05 11:16:15 by justinmorne      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
-CC = @g++
+NAME = ex00
+CC = @c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = @rm -f
 
@@ -22,7 +22,7 @@ OBJ_DIR = objs/
 OBJS = ${addprefix ${OBJ_DIR}, $(SRC_FILES:.cpp=.o)}
 
 ${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
-	@echo "$(_BLUE)$(_BOLD)Compilation Printf: $< $(_END)"
+	@echo "$(_BLUE)$(_BOLD) CPP EX00 $< $(_END)"
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 #Couleurs!
@@ -60,5 +60,4 @@ fclean: clean
 
 re: fclean all
 
-
-
+.PHONY : all clean fclean re
