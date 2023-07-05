@@ -6,15 +6,15 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/05 12:03:14 by jmorneau          #+#    #+#              #
-#    Updated: 2023/07/05 13:05:12 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/05 12:54:33 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp Animal/Animal.cpp Animal/Dog/Dog.cpp Animal/Cat/Cat.cpp WrongAnimal/WrongAnimal.cpp WrongAnimal/WrongCat/WrongCat.cpp WrongAnimal/WrongDog/WrongDog.cpp
+SRC_FILES = main.cpp Animal/Animal.cpp Animal/Dog/Dog.cpp Animal/Cat/Cat.cpp Brain/Brain.cpp
 OBJ_DIR = objs/
 
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC_FILES))
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@echo "$(_BLUE)$(_BOLD)Compiling CPP - EX00 : $<...$(_END)"
+	@echo "$(_BLUE)$(_BOLD)Compiling CPP - EX02 : $<...$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

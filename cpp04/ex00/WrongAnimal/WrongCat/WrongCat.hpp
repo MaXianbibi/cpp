@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 11:21:55 by justinmorne       #+#    #+#             */
-/*   Updated: 2023/07/05 12:08:03 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/07/05 11:19:49 by justinmorne       #+#    #+#             */
+/*   Updated: 2023/07/05 12:19:24 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "../Animal.hpp"
+#include "../WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 private:
     
 public:
-    Dog();
-    ~Dog();
+    WrongCat();
+    ~WrongCat();
 
-    Dog(Dog const &copy);
-    Dog &operator=(Dog const &copy);
+    WrongCat(WrongCat const &copy);
+    WrongCat &operator=(WrongCat const &copy);
 
     void    makeSound() const;
 };

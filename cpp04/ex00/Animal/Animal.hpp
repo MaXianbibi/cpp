@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 11:18:03 by justinmorne       #+#    #+#             */
-/*   Updated: 2023/07/05 11:28:13 by justinmorne      ###   ########.fr       */
+/*   Updated: 2023/07/05 12:16:03 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+#include <string>
 
 class Animal
 {
@@ -22,11 +23,12 @@ protected:
     
 public:
     Animal();
-    ~Animal();
+    virtual ~Animal();
     Animal(Animal const &copy);
     Animal &operator=(Animal const &copy);
 
     virtual void   makeSound() const;
+	std::string    getType() const;
 };
 
 #endif

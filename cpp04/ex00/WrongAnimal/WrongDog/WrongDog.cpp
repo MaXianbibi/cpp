@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongDog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongDog.hpp"
 
-Dog::Dog()
+WrongDog::WrongDog()
 {
-	std::cout << "Dog constructor called" << std::endl;
-    type = "Dog";
+	std::cout << "WrongDog constructor called" << std::endl;
+    type = "WrongDog";
 }
 
-Dog::~Dog()
+WrongDog::~WrongDog()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "WrongDog destructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &copy)
+WrongDog::WrongDog(WrongDog const &copy)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "WrongDog copy constructor called" << std::endl;
     *this = copy;
 }
 
-Dog &Dog::operator=(Dog const &copy)
+WrongDog &WrongDog::operator=(WrongDog const &copy)
 {
-	std::cout << "Dog assignation operator called" << std::endl;
+	std::cout << "WrongDog assignation operator called" << std::endl;
     if (this != &copy)
         type = copy.type;
     return (*this);
 }
 
-void    Dog::makeSound() const
+void    WrongDog::makeSound() const
 {
     std::cout << "WOUF WOUF !" << std::endl;
 }
