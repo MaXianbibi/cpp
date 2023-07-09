@@ -6,15 +6,16 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 13:17:43 by jmorneau          #+#    #+#              #
-#    Updated: 2023/07/06 14:50:49 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/09 15:26:28 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp ./Bureaucrat/Bureaucrat.cpp ./Form/Form.cpp
+SRC_FILES = main.cpp ./Bureaucrat/Bureaucrat.cpp ./AForm/AForm.cpp ./ShrubberyCreationForm/ShrubberyCreationForm.cpp \
+			./RobotomyRequestForm/RobotomyRequestForm.cpp ./PresidentialPardonForm/PresidentialPardonForm.cpp Intern/Intern.cpp
 OBJ_DIR = objs/
 
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC_FILES))
@@ -31,7 +32,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@echo "$(_BLUE)$(_BOLD)Compiling CPP05 - EX01 : $<...$(_END)"
+	@echo "$(_BLUE)$(_BOLD)Compiling CPP05 - EX02 : $<...$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

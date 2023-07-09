@@ -5,40 +5,79 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 13:23:40 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/26 13:58:05 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/07/06 13:29:48 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/07/06 15:16:22 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "Bureaucrat/Bureaucrat.hpp"
+#include "Form/Form.hpp"
 
-int main ( void )
+int main(void)
 {
-	Bureaucrat ok("Random", 150);
 
-	Bureaucrat Jean("Jean", 1);
+	std::cout << "\033[1;93;4mTEST 1 :\033[0m" << std::endl;
+	try
+	{
+		Form f("Form", 10, 10);
+		Bureaucrat Jean("Jean", 10);
 
-	Bureaucrat Monsieur("Monsieur", 19);
+		std::cout << std::endl;
+
+		std::cout << f << std::endl;
+		std::cout << Jean << std::endl
+				  << std::endl;
+
+		Jean.signForm(f);
+		std::cout << std::endl;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+
+	std::cout << "\033[1;93;4mTEST 2 :\033[0m" << std::endl;
+	try
+	{
 	
-	std::cout << ok << std::endl;
-	std::cout << Monsieur << std::endl;
-	std::cout << Jean << std::endl << std::endl;
+			
+		Form f("Form", 10, 10);
+		Bureaucrat Jean("Jean", 150);
 
-	Form doc("Doc", 20, 20);
+		std::cout << std::endl;
 
-	std::cout << doc << std::endl << std::endl;
+		std::cout << f << std::endl;
+		std::cout << Jean << std::endl
+				  << std::endl;
 
-	ok.signForm(doc);
+		Jean.signForm(f);
+		std::cout << std::endl;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
+
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+
+	std::cout << "\033[1;93;4mTEST 3 :\033[0m" << std::endl;
+	try
+	{
+		Form f("Form", 0, 10);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+
+	std::cout << "\033[1;93;4mTEST 4 :\033[0m" << std::endl;
+
+	try
+	{
+		Form f("Form", 151, 0);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
 	
-	std::cout << std::endl << doc << std::endl << std::endl ;
-
-	Jean.signForm(doc);
-
-	std::cout << std::endl << doc << std::endl << std::endl ;
-
-	Monsieur.signForm(doc);
-	
-	
-
+	return (0);
 }

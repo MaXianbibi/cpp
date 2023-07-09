@@ -3,43 +3,97 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: justinmorneau <justinmorneau@student.42    +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 13:23:40 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/19 03:10:14 by justinmorne      ###   ########.fr       */
+/*   Created: 2023/07/06 13:29:48 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/07/06 14:27:57 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Bureaucrat/Bureaucrat.hpp"
 
-int main ( void )
+int main(void)
 {
-	Bureaucrat * hello = NULL;
 
-	try
+	std::cout << "\033[1;93;4mTEST 1 :\033[0m" << std::endl;
 	{
-		hello = new Bureaucrat("Bob", 20);
-	}
-	catch(Bureaucrat::Exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	if (hello)
-	{
-		std::cout << hello->getName() << std::endl;
-		std::cout << hello->getGrade() << std::endl;
 		try
 		{
-			hello->decreaseGrade(101);
-		}	
-		catch(Bureaucrat::Exception &e)
-		{
-			std::cerr << e.what() << '\n';
+			Bureaucrat b("Jean", 21);
+			std::cout << b << std::endl;
 		}
-		
-		std::cout << hello->getGrade() << std::endl;
-		std::cout << *hello << std::endl;
-		delete hello;
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
+	
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+	
+	std::cout << "\033[1;93;4mTEST 2 :\033[0m" << std::endl;
+	{
+		try
+		{
+			Bureaucrat b("Jean", 0);
+			std::cout << b << std::endl;
+
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+
+	std::cout << "\033[1;93;4mTEST 3 :\033[0m" << std::endl;
+	{
+		try
+		{
+			Bureaucrat b("Jean", 151);
+			std::cout << b << std::endl;
+
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+
+	std::cout << "\033[1;93;4mTEST 4 :\033[0m" << std::endl;
+	{
+		try
+		{
+			Bureaucrat b("Jean", 149);
+			std::cout << b << std::endl;
+			b.decrementGrade();
+			std::cout << b << std::endl;
+			b.decrementGrade();
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl << std::endl << "-------------------------------------" << std::endl << std::endl << std::endl;
+	
+	std::cout << "\033[1;93;4mTEST 5 :\033[0m" << std::endl;
+	{
+		try
+		{
+			Bureaucrat b("Jean", 2);
+			std::cout << b << std::endl;
+			b.incrementGrade();
+			std::cout << b << std::endl;
+			b.incrementGrade();
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+	return (0);
 }

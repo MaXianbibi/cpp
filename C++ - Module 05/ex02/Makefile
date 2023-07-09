@@ -5,60 +5,42 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/04 22:00:22 by jmorneau          #+#    #+#              #
-#    Updated: 2023/01/26 01:15:37 by jmorneau         ###   ########.fr        #
+#    Created: 2023/07/06 13:17:43 by jmorneau          #+#    #+#              #
+#    Updated: 2023/07/09 14:59:58 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
-CC = @g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-RM = @rm -f
 
-SRC_DIR = ./
-SRC_FILES =	$(wildcard *.cpp)
-
+SRC_FILES = main.cpp ./Bureaucrat/Bureaucrat.cpp ./AForm/AForm.cpp ./ShrubberyCreationForm/ShrubberyCreationForm.cpp \
+			./RobotomyRequestForm/RobotomyRequestForm.cpp ./PresidentialPardonForm/PresidentialPardonForm.cpp
 OBJ_DIR = objs/
-OBJS = ${addprefix ${OBJ_DIR}, $(SRC_FILES:.cpp=.o)}
 
-${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
-	@echo "$(_BLUE)$(_BOLD)Compilation Printf: $< $(_END)"
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC_FILES))
 
-#Couleurs!
-_END=$'\x1b[0m
-_BOLD=$'\x1b[1m
-_UNDER=$'\x1b[4m
-_RED=$'\x1b[31m
-_GREEN=$'\x1b[32m
-_YELLOW=$'\x1b[33m
-_BLUE=$'\x1b[34m
-_PURPLE=$'\x1b[35m
-_WHITE=$'\x1b[37m
-_IRED=$'\x1b[41m
-_IGREEN=$'\x1b[42m
-_IYELLOW=$'\x1b[43m
-_IBLUE=$'\x1b[44m
-_IPURPLE=$'\x1b[45m
-_IWHITE=$'\x1b[47m
+# Colors
+_END = \033[0m
+_BOLD = \033[1m
+_BLUE = \033[34m
 
 all: $(NAME)
 
-$(NAME): ${OBJ_DIR} $(OBJS)
-	${CC} ${OBJS} -o $@
+$(NAME): $(OBJS)
+	@$(CC) $(OBJS) -o $(NAME)
 
-${OBJ_DIR}:
-	mkdir -p $@
-
+$(OBJ_DIR)%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@echo "$(_BLUE)$(_BOLD)Compiling CPP05 - EX02 : $<...$(_END)"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) -r ${OBJ_DIR}
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@$(RM) -r ${OBJ_DIR}
-	@$(RM) $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-
-
+.PHONY: all clean fclean re

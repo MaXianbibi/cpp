@@ -5,26 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 14:10:31 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/02/27 14:13:36 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/07/06 15:24:09 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/07/09 14:30:29 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-#include "Form.hpp"
+#include "../AForm/AForm.hpp"
+#include <fstream>
 
-class ShrubberyCreationForm : public Form
+
+class ShrubberyCreationForm : public AForm
 {
 private:
-	const std::string target;
-
+	std::string		_target;
 public:
-	ShrubberyCreationForm(const std::string _target);
+	ShrubberyCreationForm();
 	~ShrubberyCreationForm();
-};
 
+	ShrubberyCreationForm(const std::string target);
+	ShrubberyCreationForm(ShrubberyCreationForm const & copy);
+	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & copy);
+	
+	void beSigned(const Bureaucrat & b);
+
+	const std::string	&getTarget() const;
+	
+	void execute(Bureaucrat const & executor) const;
+};
 
 
 
