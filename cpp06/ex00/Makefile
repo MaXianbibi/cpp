@@ -6,11 +6,11 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 13:17:43 by jmorneau          #+#    #+#              #
-#    Updated: 2023/07/09 15:49:33 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/10 13:29:41 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex00
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@echo "$(_BLUE)$(_BOLD)Compiling CPP05 - EX02 : $<...$(_END)"
+	@echo "$(_BLUE)$(_BOLD)Compiling CPP06 - EX00 : $<...$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
