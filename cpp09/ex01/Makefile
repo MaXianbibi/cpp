@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 13:17:43 by jmorneau          #+#    #+#              #
-#    Updated: 2023/07/21 01:18:34 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/22 14:05:54 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@echo "$(_BLUE)$(_BOLD)Compiling CPP08 - EX01 : $<...$(_END)"
+	@echo "$(_BLUE)$(_BOLD)Compiling CPP09 - RPN : $<...$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

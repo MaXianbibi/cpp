@@ -6,15 +6,15 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 13:17:43 by jmorneau          #+#    #+#              #
-#    Updated: 2023/07/22 14:06:04 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/22 16:25:23 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = btc
+NAME = PmergeMe
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp BitcoinExchange.cpp Date.cpp
+SRC_FILES = main.cpp PmergeMe.cpp
 OBJ_DIR = objs/
 
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC_FILES))
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@echo "$(_BLUE)$(_BOLD)Compiling CPP09 - btc : $<...$(_END)"
+	@echo "$(_BLUE)$(_BOLD)Compiling CPP09 - PmergeMe : $<...$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -41,5 +41,8 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+test: all
+	@./$(NAME) `jot -r 3000 1 100000 | tr '\n' ' '`
 
 .PHONY: all clean fclean re
