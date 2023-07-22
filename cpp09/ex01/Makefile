@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 13:17:43 by jmorneau          #+#    #+#              #
-#    Updated: 2023/07/21 00:18:08 by jmorneau         ###   ########.fr        #
+#    Updated: 2023/07/21 01:18:34 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = RPN
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp 
+SRC_FILES = main.cpp RPN.cpp
 OBJ_DIR = objs/
 
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC_FILES))

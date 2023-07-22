@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 00:18:13 by jmorneau          #+#    #+#             */
-/*   Updated: 2023/07/22 13:45:37 by jmorneau         ###   ########.fr       */
+/*   Created: 2023/07/21 01:12:16 by jmorneau          #+#    #+#             */
+/*   Updated: 2023/07/22 13:40:42 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RPN_HPP
+# define RPN_HPP
+
 #include <iostream>
-#include <array>
+#include <stack>
 #include <string>
 
-#include "RPN.hpp"
 
-int main(int argc, char **argv)
+class RPN
 {
-	std::array<std::string, 3> args;
+private:
+	std::stack<int>		_stack;	
+public:
+	RPN(std::string input);
+	~RPN();
+	void 				operation(char c);
+	int 				getResult() const;
+};
 
-	if (argc != 2)
-	{
-		std::cerr << "Usage: ./RPN [inverted Polish mathematical expression]" << std::endl;
-		return (1);
-	}
 
 
-	RPN *ok;
-	try 
-	{
-		ok = new RPN(argv[1]);
-		std::cout << ok->getResult() << std::endl;
-	} catch (const char *e)	{
-		std::cerr << e << std::endl;
-	}
-	
-		delete ok;
-	return (0);
-}
+
+
+#endif
